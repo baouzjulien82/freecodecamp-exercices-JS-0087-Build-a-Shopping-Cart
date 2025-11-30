@@ -50,7 +50,7 @@ class ShoppingCart {
   // Ajout d’un produit au panier
   addItem(id, products) {
     const product = products.find((item) => item.id === id); // Recherche du produit par ID
-    const { name, price } = product;
+    //const { name, price } = product; destructuration non utilisé dans le code
     this.items.push(product); // Ajout du produit dans le tableau
 
     // Calcul du nombre d’exemplaires par produit
