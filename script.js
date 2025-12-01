@@ -58,6 +58,11 @@ class ShoppingCart {
     this.items.forEach((dessert) => {
       totalCountPerProduct[dessert.id] = (totalCountPerProduct[dessert.id] || 0) + 1; // on assigne la paire clef valeur id : 0 + 1 si première fois ou id : n + 1 si n fois
     });
+    // version avec reduce()
+    /* const totalCountPerProduct = this.items.reduce((acc, dessert) => {
+          acc[dessert.id] = (acc[dessert.id] || 0) + 1;
+          return acc;
+        }, {}); */
 
     const currentProductCount = totalCountPerProduct[product.id];
     const currentProductCountSpan = document.getElementById(`product-count-for-id${id}`);
