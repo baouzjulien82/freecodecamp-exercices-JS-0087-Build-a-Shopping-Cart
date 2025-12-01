@@ -54,9 +54,9 @@ class ShoppingCart {
     this.items.push(product); // Ajout du produit dans le tableau
 
     // Calcul du nombre d’exemplaires par produit
-    const totalCountPerProduct = {};
+    const totalCountPerProduct = {}; // on créé un objet vide
     this.items.forEach((dessert) => {
-      totalCountPerProduct[dessert.id] = (totalCountPerProduct[dessert.id] || 0) + 1;
+      totalCountPerProduct[dessert.id] = (totalCountPerProduct[dessert.id] || 0) + 1; // on assigne la paire clef valeur id : 0 + 1 si première fois ou id : n + 1 si n fois
     });
 
     const currentProductCount = totalCountPerProduct[product.id];
@@ -145,4 +145,4 @@ cartBtn.addEventListener("click", () => {
 });
 
 // Gestion du bouton pour vider le panier
-clearCartBtn.addEventListener("click", cart.clearCart.bind(cart));
+clearCartBtn.addEventListener("click", cart.clearCart.bind(cart)); // ici, .bind(cart) permet de rester dans le contexte de cart et ne pas perdre les référence de this dans l'objet.
